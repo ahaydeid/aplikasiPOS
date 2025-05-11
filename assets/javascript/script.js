@@ -129,3 +129,47 @@
 // console.log(sisanya);
 
 
+
+
+//_____ARRAY DI REACT: SEPERTI RAK BARANG_____//
+//_____forEach() : SI TUKANG PERIKSA
+// let angka = [1,2,3,4,5];
+// angka.forEach((angka, index) => {
+//     console.log(`Angka ke-${index+1} : ${angka}`);
+// });
+
+//_____map() : SI MESIN PENGUBAH
+// let angka = [1,2,3,4,5];
+// let angkaKuadrat = angka.map(angka => angka*angka);
+// console.log(angkaKuadrat);
+
+
+
+//_____ASYNCHRONOUS JAVASCRIPT (PROMISE / ASYNC-AWAIT)
+//_____JAVASCRIPT SYNCHRONOUS: ANTRIAN DI KASIR
+//_____JAVASCRIPT ASYNCHRONOUS: PESAN MAKAKAN DI RESTORAN
+//_____PROMISE: "JANJI" UNTUK MENYAMPAIKAN HASIL
+const pesanMakanan = (makananSiap) => {
+    return new Promise((resolve, reject) => {
+        if(makananSiap){
+            resolve("Makanan Siap!");
+        } else {
+            reject("Maaf, makanan habis");
+        }
+    });
+};
+
+//_____.then() dan .catch() MENUNGGU DAN MENANGANI HASIL
+// .then(pesan => console.log(pesan) )
+// .catch(error => console.log(error));
+
+//_____async / await : MEMBUAT KODE ASYNCHRONOUS LEBIH MUDAH
+const makan = async () => {
+    try {
+        let pesan = await pesanMakanan(true);
+        console.log(pesan);
+    } catch(error){
+        console.log(error);        
+    }
+};
+makan();
